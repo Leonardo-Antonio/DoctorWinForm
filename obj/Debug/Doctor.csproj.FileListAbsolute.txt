@@ -1,0 +1,17 @@
+D:\CSharp\Doctor\obj\Debug\Doctor.csprojAssemblyReference.cache
+D:\CSharp\Doctor\obj\Debug\Doctor.Properties.Resources.resources
+D:\CSharp\Doctor\obj\Debug\Doctor.Views.Main.resources
+D:\CSharp\Doctor\obj\Debug\Doctor.csproj.GenerateResource.cache
+D:\CSharp\Doctor\obj\Debug\Doctor.csproj.CoreCompileInputs.cache
+D:\CSharp\Doctor\bin\Debug\Doctor.exe.config
+D:\CSharp\Doctor\bin\Debug\Doctor.exe
+D:\CSharp\Doctor\bin\Debug\Doctor.pdb
+D:\CSharp\Doctor\bin\Debug\MetroFramework.Design.dll
+D:\CSharp\Doctor\bin\Debug\MetroFramework.dll
+D:\CSharp\Doctor\bin\Debug\MetroFramework.Fonts.dll
+D:\CSharp\Doctor\obj\Debug\Doctor.csproj.CopyComplete
+D:\CSharp\Doctor\obj\Debug\Doctor.exe
+D:\CSharp\Doctor\obj\Debug\Doctor.pdb
+D:\CSharp\Doctor\obj\Debug\Doctor.Views.Contrareferencia.resources
+D:\CSharp\Doctor\obj\Debug\Doctor.Views.Diagnosis.resources
+D:\CSharp\Doctor\obj\Debug\Doctor.Views.Login.resources
