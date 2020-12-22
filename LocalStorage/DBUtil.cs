@@ -8,6 +8,6 @@ namespace Doctor.LocalStorage
 {
     public class DBUtil
     {
-        public static Models.db_clinicEntities1 db = new Models.db_clinicEntities1(); 
+        public static Models.db_clinicEntitie db = new Models.db_clinicEntitie(); 
     }
 }

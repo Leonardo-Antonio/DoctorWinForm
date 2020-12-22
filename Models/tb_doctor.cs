@@ -38,7 +38,6 @@ namespace Doctor.Models
         public virtual ICollection<tb_contrareferencia> tb_contrareferencia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_diagnosis> tb_diagnosis { get; set; }
-        public virtual tb_hour tb_hour { get; set; }
         public virtual tb_speciality tb_speciality { get; set; }
     }
 }

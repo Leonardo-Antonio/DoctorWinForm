@@ -11,31 +11,16 @@
     <Property Name="id_patient" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="id_receptionist" Type="Int32" Nullable="false" />
     <Property Name="state" Type="Boolean" />
-    <NavigationProperty Name="tb_doctor" Relationship="Self.FK__tb_appoin__id_do__056ECC6A" FromRole="tb_appointment" ToRole="tb_doctor" />
-    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_appoin__id_pa__0662F0A3" FromRole="tb_appointment" ToRole="tb_patient" />
-    <NavigationProperty Name="tb_receptionist" Relationship="Self.FK__tb_appoin__id_re__075714DC" FromRole="tb_appointment" ToRole="tb_receptionist" />
-    <NavigationProperty Name="tb_proof_of_purchase" Relationship="Self.FK__tb_proof___id_ap__0EF836A4" FromRole="tb_appointment" ToRole="tb_proof_of_purchase" />
-  </EntityType>
-  <EntityType Name="tb_cashier">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="a_p" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="a_m" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="dni" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="state" Type="Boolean" />
-    <Property Name="password" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="tb_proof_of_purchase" Relationship="Self.FK__tb_proof___id_ca__0FEC5ADD" FromRole="tb_cashier" ToRole="tb_proof_of_purchase" />
+    <NavigationProperty Name="tb_doctor" Relationship="Self.FK__tb_appoin__id_do__184C96B4" FromRole="tb_appointment" ToRole="tb_doctor" />
+    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_appoin__id_pa__1940BAED" FromRole="tb_appointment" ToRole="tb_patient" />
   </EntityType>
   <EntityType Name="tb_clinic_history">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tb_diagnosis" Relationship="Self.FK__tb_diagno__id_cl__7720AD13" FromRole="tb_clinic_history" ToRole="tb_diagnosis" />
-    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_patien__id_cl__725BF7F6" FromRole="tb_clinic_history" ToRole="tb_patient" />
+    <NavigationProperty Name="tb_diagnosis" Relationship="Self.FK__tb_diagno__id_cl__0BE6BFCF" FromRole="tb_clinic_history" ToRole="tb_diagnosis" />
+    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_patien__id_cl__07220AB2" FromRole="tb_clinic_history" ToRole="tb_patient" />
   </EntityType>
   <EntityType Name="tb_contrareferencia">
     <Key>
@@ -52,11 +37,10 @@
     <Property Name="date_contref" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="id_patient" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="id_doctor" Type="Int32" Nullable="false" />
-    <Property Name="id_receptionist" Type="Int32" Nullable="false" />
-    <Property Name="state" Type="Boolean" />
-    <NavigationProperty Name="tb_doctor" Relationship="Self.FK__tb_contra__id_do__00AA174D" FromRole="tb_contrareferencia" ToRole="tb_doctor" />
-    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_contra__id_pa__7FB5F314" FromRole="tb_contrareferencia" ToRole="tb_patient" />
-    <NavigationProperty Name="tb_receptionist" Relationship="Self.FK__tb_contra__id_re__019E3B86" FromRole="tb_contrareferencia" ToRole="tb_receptionist" />
+    <Property Name="deleted_at" Type="DateTime" Precision="0" />
+    <Property Name="updated_at" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tb_doctor" Relationship="Self.FK__tb_contra__id_do__147C05D0" FromRole="tb_contrareferencia" ToRole="tb_doctor" />
+    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_contra__id_pa__1387E197" FromRole="tb_contrareferencia" ToRole="tb_patient" />
   </EntityType>
   <EntityType Name="tb_diagnosis">
     <Key>
@@ -70,8 +54,8 @@
     <Property Name="id_doctor" Type="Int32" Nullable="false" />
     <Property Name="deleted_at" Type="DateTime" Precision="0" />
     <Property Name="updated_at" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="tb_clinic_history" Relationship="Self.FK__tb_diagno__id_cl__7720AD13" FromRole="tb_diagnosis" ToRole="tb_clinic_history" />
-    <NavigationProperty Name="tb_doctor" Relationship="Self.FK__tb_diagno__id_do__7814D14C" FromRole="tb_diagnosis" ToRole="tb_doctor" />
+    <NavigationProperty Name="tb_clinic_history" Relationship="Self.FK__tb_diagno__id_cl__0BE6BFCF" FromRole="tb_diagnosis" ToRole="tb_clinic_history" />
+    <NavigationProperty Name="tb_doctor" Relationship="Self.FK__tb_diagno__id_do__0CDAE408" FromRole="tb_diagnosis" ToRole="tb_doctor" />
   </EntityType>
   <EntityType Name="tb_district">
     <Key>
@@ -79,7 +63,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="district" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_patien__id_di__74444068" FromRole="tb_district" ToRole="tb_patient" />
+    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_patien__id_di__090A5324" FromRole="tb_district" ToRole="tb_patient" />
   </EntityType>
   <EntityType Name="tb_doctor">
     <Key>
@@ -94,11 +78,10 @@
     <Property Name="id_hour" Type="Int32" Nullable="false" />
     <Property Name="id_speciality" Type="Int32" Nullable="false" />
     <Property Name="state" Type="Boolean" />
-    <NavigationProperty Name="tb_appointment" Relationship="Self.FK__tb_appoin__id_do__056ECC6A" FromRole="tb_doctor" ToRole="tb_appointment" />
-    <NavigationProperty Name="tb_contrareferencia" Relationship="Self.FK__tb_contra__id_do__00AA174D" FromRole="tb_doctor" ToRole="tb_contrareferencia" />
-    <NavigationProperty Name="tb_diagnosis" Relationship="Self.FK__tb_diagno__id_do__7814D14C" FromRole="tb_doctor" ToRole="tb_diagnosis" />
-    <NavigationProperty Name="tb_hour" Relationship="Self.FK__tb_doctor__id_ho__59904A2C" FromRole="tb_doctor" ToRole="tb_hour" />
-    <NavigationProperty Name="tb_speciality" Relationship="Self.FK__tb_doctor__id_sp__5A846E65" FromRole="tb_doctor" ToRole="tb_speciality" />
+    <NavigationProperty Name="tb_appointment" Relationship="Self.FK__tb_appoin__id_do__184C96B4" FromRole="tb_doctor" ToRole="tb_appointment" />
+    <NavigationProperty Name="tb_contrareferencia" Relationship="Self.FK__tb_contra__id_do__147C05D0" FromRole="tb_doctor" ToRole="tb_contrareferencia" />
+    <NavigationProperty Name="tb_diagnosis" Relationship="Self.FK__tb_diagno__id_do__0CDAE408" FromRole="tb_doctor" ToRole="tb_diagnosis" />
+    <NavigationProperty Name="tb_speciality" Relationship="Self.FK__tb_doctor__id_sp__6F4A8121" FromRole="tb_doctor" ToRole="tb_speciality" />
   </EntityType>
   <EntityType Name="tb_gender">
     <Key>
@@ -106,34 +89,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_patien__id_ge__6F7F8B4B" FromRole="tb_gender" ToRole="tb_patient" />
-  </EntityType>
-  <EntityType Name="tb_health_insurance">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_patien__id_he__73501C2F" FromRole="tb_health_insurance" ToRole="tb_patient" />
-  </EntityType>
-  <EntityType Name="tb_hour">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="entry" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="departure" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="id_turn" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tb_doctor" Relationship="Self.FK__tb_doctor__id_ho__59904A2C" FromRole="tb_hour" ToRole="tb_doctor" />
-    <NavigationProperty Name="tb_turn" Relationship="Self.FK__tb_hour__id_turn__51EF2864" FromRole="tb_hour" ToRole="tb_turn" />
-  </EntityType>
-  <EntityType Name="tb_marital_status">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="marital_status" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_patien__id_ma__7167D3BD" FromRole="tb_marital_status" ToRole="tb_patient" />
+    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_patien__id_ge__04459E07" FromRole="tb_gender" ToRole="tb_patient" />
   </EntityType>
   <EntityType Name="tb_patient">
     <Key>
@@ -155,38 +111,11 @@
     <Property Name="id_health_insurance" Type="Int32" Nullable="false" />
     <Property Name="id_district" Type="Int32" Nullable="false" />
     <Property Name="state" Type="Boolean" />
-    <NavigationProperty Name="tb_appointment" Relationship="Self.FK__tb_appoin__id_pa__0662F0A3" FromRole="tb_patient" ToRole="tb_appointment" />
-    <NavigationProperty Name="tb_clinic_history" Relationship="Self.FK__tb_patien__id_cl__725BF7F6" FromRole="tb_patient" ToRole="tb_clinic_history" />
-    <NavigationProperty Name="tb_contrareferencia" Relationship="Self.FK__tb_contra__id_pa__7FB5F314" FromRole="tb_patient" ToRole="tb_contrareferencia" />
-    <NavigationProperty Name="tb_district" Relationship="Self.FK__tb_patien__id_di__74444068" FromRole="tb_patient" ToRole="tb_district" />
-    <NavigationProperty Name="tb_gender" Relationship="Self.FK__tb_patien__id_ge__6F7F8B4B" FromRole="tb_patient" ToRole="tb_gender" />
-    <NavigationProperty Name="tb_health_insurance" Relationship="Self.FK__tb_patien__id_he__73501C2F" FromRole="tb_patient" ToRole="tb_health_insurance" />
-    <NavigationProperty Name="tb_marital_status" Relationship="Self.FK__tb_patien__id_ma__7167D3BD" FromRole="tb_patient" ToRole="tb_marital_status" />
-    <NavigationProperty Name="tb_type_identification" Relationship="Self.FK__tb_patien__id_ty__7073AF84" FromRole="tb_patient" ToRole="tb_type_identification" />
-  </EntityType>
-  <EntityType Name="tb_proof_of_purchase">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_appointment" Type="Int32" Nullable="false" />
-    <Property Name="id_cashier" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tb_appointment" Relationship="Self.FK__tb_proof___id_ap__0EF836A4" FromRole="tb_proof_of_purchase" ToRole="tb_appointment" />
-    <NavigationProperty Name="tb_cashier" Relationship="Self.FK__tb_proof___id_ca__0FEC5ADD" FromRole="tb_proof_of_purchase" ToRole="tb_cashier" />
-  </EntityType>
-  <EntityType Name="tb_receptionist">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="a_p" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="a_m" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="dni" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="state" Type="Boolean" />
-    <NavigationProperty Name="tb_appointment" Relationship="Self.FK__tb_appoin__id_re__075714DC" FromRole="tb_receptionist" ToRole="tb_appointment" />
-    <NavigationProperty Name="tb_contrareferencia" Relationship="Self.FK__tb_contra__id_re__019E3B86" FromRole="tb_receptionist" ToRole="tb_contrareferencia" />
+    <NavigationProperty Name="tb_appointment" Relationship="Self.FK__tb_appoin__id_pa__1940BAED" FromRole="tb_patient" ToRole="tb_appointment" />
+    <NavigationProperty Name="tb_clinic_history" Relationship="Self.FK__tb_patien__id_cl__07220AB2" FromRole="tb_patient" ToRole="tb_clinic_history" />
+    <NavigationProperty Name="tb_contrareferencia" Relationship="Self.FK__tb_contra__id_pa__1387E197" FromRole="tb_patient" ToRole="tb_contrareferencia" />
+    <NavigationProperty Name="tb_district" Relationship="Self.FK__tb_patien__id_di__090A5324" FromRole="tb_patient" ToRole="tb_district" />
+    <NavigationProperty Name="tb_gender" Relationship="Self.FK__tb_patien__id_ge__04459E07" FromRole="tb_patient" ToRole="tb_gender" />
   </EntityType>
   <EntityType Name="tb_speciality">
     <Key>
@@ -194,25 +123,9 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="speciality" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="tb_doctor" Relationship="Self.FK__tb_doctor__id_sp__5A846E65" FromRole="tb_speciality" ToRole="tb_doctor" />
+    <NavigationProperty Name="tb_doctor" Relationship="Self.FK__tb_doctor__id_sp__6F4A8121" FromRole="tb_speciality" ToRole="tb_doctor" />
   </EntityType>
-  <EntityType Name="tb_turn">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="turn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="tb_hour" Relationship="Self.FK__tb_hour__id_turn__51EF2864" FromRole="tb_turn" ToRole="tb_hour" />
-  </EntityType>
-  <EntityType Name="tb_type_identification">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="type" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="tb_patient" Relationship="Self.FK__tb_patien__id_ty__7073AF84" FromRole="tb_type_identification" ToRole="tb_patient" />
-  </EntityType>
-  <Association Name="FK__tb_appoin__id_do__056ECC6A">
+  <Association Name="FK__tb_appoin__id_do__184C96B4">
     <End Role="tb_doctor" Type="Self.tb_doctor" Multiplicity="1" />
     <End Role="tb_appointment" Type="Self.tb_appointment" Multiplicity="*" />
     <ReferentialConstraint>
@@ -224,7 +137,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_appoin__id_pa__0662F0A3">
+  <Association Name="FK__tb_appoin__id_pa__1940BAED">
     <End Role="tb_patient" Type="Self.tb_patient" Multiplicity="1" />
     <End Role="tb_appointment" Type="Self.tb_appointment" Multiplicity="*" />
     <ReferentialConstraint>
@@ -236,43 +149,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_appoin__id_re__075714DC">
-    <End Role="tb_receptionist" Type="Self.tb_receptionist" Multiplicity="1" />
-    <End Role="tb_appointment" Type="Self.tb_appointment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_receptionist">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tb_appointment">
-        <PropertyRef Name="id_receptionist" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_proof___id_ap__0EF836A4">
-    <End Role="tb_appointment" Type="Self.tb_appointment" Multiplicity="1" />
-    <End Role="tb_proof_of_purchase" Type="Self.tb_proof_of_purchase" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_appointment">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tb_proof_of_purchase">
-        <PropertyRef Name="id_appointment" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_proof___id_ca__0FEC5ADD">
-    <End Role="tb_cashier" Type="Self.tb_cashier" Multiplicity="1" />
-    <End Role="tb_proof_of_purchase" Type="Self.tb_proof_of_purchase" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_cashier">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tb_proof_of_purchase">
-        <PropertyRef Name="id_cashier" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_diagno__id_cl__7720AD13">
+  <Association Name="FK__tb_diagno__id_cl__0BE6BFCF">
     <End Role="tb_clinic_history" Type="Self.tb_clinic_history" Multiplicity="1" />
     <End Role="tb_diagnosis" Type="Self.tb_diagnosis" Multiplicity="*" />
     <ReferentialConstraint>
@@ -284,7 +161,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_patien__id_cl__725BF7F6">
+  <Association Name="FK__tb_patien__id_cl__07220AB2">
     <End Role="tb_clinic_history" Type="Self.tb_clinic_history" Multiplicity="1" />
     <End Role="tb_patient" Type="Self.tb_patient" Multiplicity="*" />
     <ReferentialConstraint>
@@ -296,7 +173,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_contra__id_do__00AA174D">
+  <Association Name="FK__tb_contra__id_do__147C05D0">
     <End Role="tb_doctor" Type="Self.tb_doctor" Multiplicity="1" />
     <End Role="tb_contrareferencia" Type="Self.tb_contrareferencia" Multiplicity="*" />
     <ReferentialConstraint>
@@ -308,7 +185,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_contra__id_pa__7FB5F314">
+  <Association Name="FK__tb_contra__id_pa__1387E197">
     <End Role="tb_patient" Type="Self.tb_patient" Multiplicity="1" />
     <End Role="tb_contrareferencia" Type="Self.tb_contrareferencia" Multiplicity="*" />
     <ReferentialConstraint>
@@ -320,19 +197,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_contra__id_re__019E3B86">
-    <End Role="tb_receptionist" Type="Self.tb_receptionist" Multiplicity="1" />
-    <End Role="tb_contrareferencia" Type="Self.tb_contrareferencia" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_receptionist">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tb_contrareferencia">
-        <PropertyRef Name="id_receptionist" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_diagno__id_do__7814D14C">
+  <Association Name="FK__tb_diagno__id_do__0CDAE408">
     <End Role="tb_doctor" Type="Self.tb_doctor" Multiplicity="1" />
     <End Role="tb_diagnosis" Type="Self.tb_diagnosis" Multiplicity="*" />
     <ReferentialConstraint>
@@ -344,7 +209,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_patien__id_di__74444068">
+  <Association Name="FK__tb_patien__id_di__090A5324">
     <End Role="tb_district" Type="Self.tb_district" Multiplicity="1" />
     <End Role="tb_patient" Type="Self.tb_patient" Multiplicity="*" />
     <ReferentialConstraint>
@@ -356,19 +221,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_doctor__id_ho__59904A2C">
-    <End Role="tb_hour" Type="Self.tb_hour" Multiplicity="1" />
-    <End Role="tb_doctor" Type="Self.tb_doctor" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_hour">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tb_doctor">
-        <PropertyRef Name="id_hour" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_doctor__id_sp__5A846E65">
+  <Association Name="FK__tb_doctor__id_sp__6F4A8121">
     <End Role="tb_speciality" Type="Self.tb_speciality" Multiplicity="1" />
     <End Role="tb_doctor" Type="Self.tb_doctor" Multiplicity="*" />
     <ReferentialConstraint>
@@ -380,7 +233,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_patien__id_ge__6F7F8B4B">
+  <Association Name="FK__tb_patien__id_ge__04459E07">
     <End Role="tb_gender" Type="Self.tb_gender" Multiplicity="1" />
     <End Role="tb_patient" Type="Self.tb_patient" Multiplicity="*" />
     <ReferentialConstraint>
@@ -392,146 +245,54 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_patien__id_he__73501C2F">
-    <End Role="tb_health_insurance" Type="Self.tb_health_insurance" Multiplicity="1" />
-    <End Role="tb_patient" Type="Self.tb_patient" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_health_insurance">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tb_patient">
-        <PropertyRef Name="id_health_insurance" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_hour__id_turn__51EF2864">
-    <End Role="tb_turn" Type="Self.tb_turn" Multiplicity="1" />
-    <End Role="tb_hour" Type="Self.tb_hour" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_turn">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tb_hour">
-        <PropertyRef Name="id_turn" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_patien__id_ma__7167D3BD">
-    <End Role="tb_marital_status" Type="Self.tb_marital_status" Multiplicity="1" />
-    <End Role="tb_patient" Type="Self.tb_patient" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_marital_status">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tb_patient">
-        <PropertyRef Name="id_marital_status" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_patien__id_ty__7073AF84">
-    <End Role="tb_type_identification" Type="Self.tb_type_identification" Multiplicity="1" />
-    <End Role="tb_patient" Type="Self.tb_patient" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_type_identification">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tb_patient">
-        <PropertyRef Name="id_type_identification" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="db_clinicEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="db_clinicEntitie" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tb_appointment" EntityType="Self.tb_appointment" />
-    <EntitySet Name="tb_cashier" EntityType="Self.tb_cashier" />
     <EntitySet Name="tb_clinic_history" EntityType="Self.tb_clinic_history" />
     <EntitySet Name="tb_contrareferencia" EntityType="Self.tb_contrareferencia" />
     <EntitySet Name="tb_diagnosis" EntityType="Self.tb_diagnosis" />
     <EntitySet Name="tb_district" EntityType="Self.tb_district" />
     <EntitySet Name="tb_doctor" EntityType="Self.tb_doctor" />
     <EntitySet Name="tb_gender" EntityType="Self.tb_gender" />
-    <EntitySet Name="tb_health_insurance" EntityType="Self.tb_health_insurance" />
-    <EntitySet Name="tb_hour" EntityType="Self.tb_hour" />
-    <EntitySet Name="tb_marital_status" EntityType="Self.tb_marital_status" />
     <EntitySet Name="tb_patient" EntityType="Self.tb_patient" />
-    <EntitySet Name="tb_proof_of_purchase" EntityType="Self.tb_proof_of_purchase" />
-    <EntitySet Name="tb_receptionist" EntityType="Self.tb_receptionist" />
     <EntitySet Name="tb_speciality" EntityType="Self.tb_speciality" />
-    <EntitySet Name="tb_turn" EntityType="Self.tb_turn" />
-    <EntitySet Name="tb_type_identification" EntityType="Self.tb_type_identification" />
-    <AssociationSet Name="FK__tb_appoin__id_do__056ECC6A" Association="Self.FK__tb_appoin__id_do__056ECC6A">
+    <AssociationSet Name="FK__tb_appoin__id_do__184C96B4" Association="Self.FK__tb_appoin__id_do__184C96B4">
       <End Role="tb_doctor" EntitySet="tb_doctor" />
       <End Role="tb_appointment" EntitySet="tb_appointment" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_appoin__id_pa__0662F0A3" Association="Self.FK__tb_appoin__id_pa__0662F0A3">
+    <AssociationSet Name="FK__tb_appoin__id_pa__1940BAED" Association="Self.FK__tb_appoin__id_pa__1940BAED">
       <End Role="tb_patient" EntitySet="tb_patient" />
       <End Role="tb_appointment" EntitySet="tb_appointment" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_appoin__id_re__075714DC" Association="Self.FK__tb_appoin__id_re__075714DC">
-      <End Role="tb_receptionist" EntitySet="tb_receptionist" />
-      <End Role="tb_appointment" EntitySet="tb_appointment" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_proof___id_ap__0EF836A4" Association="Self.FK__tb_proof___id_ap__0EF836A4">
-      <End Role="tb_appointment" EntitySet="tb_appointment" />
-      <End Role="tb_proof_of_purchase" EntitySet="tb_proof_of_purchase" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_proof___id_ca__0FEC5ADD" Association="Self.FK__tb_proof___id_ca__0FEC5ADD">
-      <End Role="tb_cashier" EntitySet="tb_cashier" />
-      <End Role="tb_proof_of_purchase" EntitySet="tb_proof_of_purchase" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_diagno__id_cl__7720AD13" Association="Self.FK__tb_diagno__id_cl__7720AD13">
+    <AssociationSet Name="FK__tb_diagno__id_cl__0BE6BFCF" Association="Self.FK__tb_diagno__id_cl__0BE6BFCF">
       <End Role="tb_clinic_history" EntitySet="tb_clinic_history" />
       <End Role="tb_diagnosis" EntitySet="tb_diagnosis" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_patien__id_cl__725BF7F6" Association="Self.FK__tb_patien__id_cl__725BF7F6">
+    <AssociationSet Name="FK__tb_patien__id_cl__07220AB2" Association="Self.FK__tb_patien__id_cl__07220AB2">
       <End Role="tb_clinic_history" EntitySet="tb_clinic_history" />
       <End Role="tb_patient" EntitySet="tb_patient" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_contra__id_do__00AA174D" Association="Self.FK__tb_contra__id_do__00AA174D">
+    <AssociationSet Name="FK__tb_contra__id_do__147C05D0" Association="Self.FK__tb_contra__id_do__147C05D0">
       <End Role="tb_doctor" EntitySet="tb_doctor" />
       <End Role="tb_contrareferencia" EntitySet="tb_contrareferencia" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_contra__id_pa__7FB5F314" Association="Self.FK__tb_contra__id_pa__7FB5F314">
+    <AssociationSet Name="FK__tb_contra__id_pa__1387E197" Association="Self.FK__tb_contra__id_pa__1387E197">
       <End Role="tb_patient" EntitySet="tb_patient" />
       <End Role="tb_contrareferencia" EntitySet="tb_contrareferencia" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_contra__id_re__019E3B86" Association="Self.FK__tb_contra__id_re__019E3B86">
-      <End Role="tb_receptionist" EntitySet="tb_receptionist" />
-      <End Role="tb_contrareferencia" EntitySet="tb_contrareferencia" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_diagno__id_do__7814D14C" Association="Self.FK__tb_diagno__id_do__7814D14C">
+    <AssociationSet Name="FK__tb_diagno__id_do__0CDAE408" Association="Self.FK__tb_diagno__id_do__0CDAE408">
       <End Role="tb_doctor" EntitySet="tb_doctor" />
       <End Role="tb_diagnosis" EntitySet="tb_diagnosis" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_patien__id_di__74444068" Association="Self.FK__tb_patien__id_di__74444068">
+    <AssociationSet Name="FK__tb_patien__id_di__090A5324" Association="Self.FK__tb_patien__id_di__090A5324">
       <End Role="tb_district" EntitySet="tb_district" />
       <End Role="tb_patient" EntitySet="tb_patient" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_doctor__id_ho__59904A2C" Association="Self.FK__tb_doctor__id_ho__59904A2C">
-      <End Role="tb_hour" EntitySet="tb_hour" />
-      <End Role="tb_doctor" EntitySet="tb_doctor" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_doctor__id_sp__5A846E65" Association="Self.FK__tb_doctor__id_sp__5A846E65">
+    <AssociationSet Name="FK__tb_doctor__id_sp__6F4A8121" Association="Self.FK__tb_doctor__id_sp__6F4A8121">
       <End Role="tb_speciality" EntitySet="tb_speciality" />
       <End Role="tb_doctor" EntitySet="tb_doctor" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_patien__id_ge__6F7F8B4B" Association="Self.FK__tb_patien__id_ge__6F7F8B4B">
+    <AssociationSet Name="FK__tb_patien__id_ge__04459E07" Association="Self.FK__tb_patien__id_ge__04459E07">
       <End Role="tb_gender" EntitySet="tb_gender" />
-      <End Role="tb_patient" EntitySet="tb_patient" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_patien__id_he__73501C2F" Association="Self.FK__tb_patien__id_he__73501C2F">
-      <End Role="tb_health_insurance" EntitySet="tb_health_insurance" />
-      <End Role="tb_patient" EntitySet="tb_patient" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_hour__id_turn__51EF2864" Association="Self.FK__tb_hour__id_turn__51EF2864">
-      <End Role="tb_turn" EntitySet="tb_turn" />
-      <End Role="tb_hour" EntitySet="tb_hour" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_patien__id_ma__7167D3BD" Association="Self.FK__tb_patien__id_ma__7167D3BD">
-      <End Role="tb_marital_status" EntitySet="tb_marital_status" />
-      <End Role="tb_patient" EntitySet="tb_patient" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_patien__id_ty__7073AF84" Association="Self.FK__tb_patien__id_ty__7073AF84">
-      <End Role="tb_type_identification" EntitySet="tb_type_identification" />
       <End Role="tb_patient" EntitySet="tb_patient" />
     </AssociationSet>
   </EntityContainer>

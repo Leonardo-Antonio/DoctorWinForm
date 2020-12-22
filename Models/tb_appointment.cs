@@ -14,12 +14,6 @@ namespace Doctor.Models
     
     public partial class tb_appointment
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_appointment()
-        {
-            this.tb_proof_of_purchase = new HashSet<tb_proof_of_purchase>();
-        }
-    
         public int id { get; set; }
         public System.TimeSpan hour { get; set; }
         public System.DateTime date { get; set; }
@@ -30,8 +24,5 @@ namespace Doctor.Models
     
         public virtual tb_doctor tb_doctor { get; set; }
         public virtual tb_patient tb_patient { get; set; }
-        public virtual tb_receptionist tb_receptionist { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_proof_of_purchase> tb_proof_of_purchase { get; set; }
     }
 }

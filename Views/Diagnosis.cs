@@ -25,7 +25,7 @@ namespace Doctor.Views
 
         private void _btn_add_Click(object sender, EventArgs e)
         {
-            if (txt_motivo_consulta.Text == "")
+            if (txt_motivo_consulta.Text == "" || string.IsNullOrEmpty(txt_motivo_consulta.Text))
             {
                 MetroFramework.MetroMessageBox.Show(
                     this, "No deje el campo vacio", "Advertencia", 
@@ -38,41 +38,16 @@ namespace Doctor.Views
             {
                 var model = new Models.tb_diagnosis();
                 model.reasons_for_consultation = txt_motivo_consulta.Text;
-                if (string.IsNullOrEmpty(txt_hp.Text))
-                    model.pathological_history = null;
-                else
-                    model.pathological_history = txt_hp.Text;
-
-                if (string.IsNullOrEmpty(txt_enfermedad.Text))
-                    model.current_illness = null;
-                else
-                    model.current_illness = txt_enfermedad.Text;
+                model.pathological_history = (string.IsNullOrEmpty(txt_hp.Text) ? null : txt_hp.Text);
+                model.current_illness = (string.IsNullOrEmpty(txt_enfermedad.Text) ? null : txt_enfermedad.Text);
                 model.id_clinic_history = int.Parse(txt_num_hc.Text);
                 model.id_doctor = LocalStorage.Doctor.ID;
 
                 LocalStorage.DBUtil.db.tb_diagnosis.Add(model);
                 var response = LocalStorage.DBUtil.db.SaveChanges();
-                if (response != 1)
-                {
-                    MetroFramework.MetroMessageBox.Show(
-                        this, "No hubieron filas afectafas",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                        );
-                }
-                else
-                {
-                    MetroFramework.MetroMessageBox.Show(
-                        this, "Registro creado correctamente",
-                        "Creado",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation
-                        );
-                    this._listDiagnosis();
-                }
-
+                var ok = LocalStorage.MessageResponse.Show(response, this, "creado");
                 this._listDiagnosis();
+
             } catch (FormatException)
             {
                 MetroFramework.MetroMessageBox.Show(
@@ -85,7 +60,7 @@ namespace Doctor.Views
             catch (System.Data.Entity.Infrastructure.DbUpdateException)
             {
                 MetroFramework.MetroMessageBox.Show(
-                    this, "El num de historia clinica no existe", 
+                    this, "El num de historia clinica no existe",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
@@ -111,28 +86,10 @@ namespace Doctor.Views
                            NunHistoria_Clinica = data.id_clinic_history,
                            IDDoc = diagnosis.id_doctor,
                            IDDiagnosis = diagnosis.id,
-                           Deleted_at = diagnosis.deleted_at,
                            Updated_at = diagnosis.updated_at,
                        };
 
             dgv_diagnosis.DataSource = list.ToList();
-        }
-
-        private void dgv_diagnosis_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgv_diagnosis.Rows[e.RowIndex].Cells["Historial_Patológico"].Value == null)
-                txt_hp.Text = "";
-            else
-                txt_hp.Text = dgv_diagnosis.Rows[e.RowIndex].Cells["Historial_Patológico"].Value.ToString();
-
-            if (dgv_diagnosis.Rows[e.RowIndex].Cells["Enfermedad"].Value == null)
-                txt_enfermedad.Text = "";
-            else
-                txt_enfermedad.Text = dgv_diagnosis.Rows[e.RowIndex].Cells["Enfermedad"].Value.ToString();
-
-            lbl_id.Text = dgv_diagnosis.Rows[e.RowIndex].Cells["IDDiagnosis"].Value.ToString();
-            txt_motivo_consulta.Text = dgv_diagnosis.Rows[e.RowIndex].Cells["Motivo_de_consulta"].Value.ToString();
-            txt_num_hc.Text = dgv_diagnosis.Rows[e.RowIndex].Cells["NunHistoria_Clinica"].Value.ToString();
         }
 
         private void _btn_update_Click(object sender, EventArgs e)
@@ -175,25 +132,9 @@ namespace Doctor.Views
                     model.current_illness = txt_enfermedad.Text;
                 model.id_clinic_history = int.Parse(txt_num_hc.Text);
                 var response = LocalStorage.DBUtil.db.SaveChanges();
-                if (response != 1)
-                {
-                    MetroFramework.MetroMessageBox.Show(
-                        this, "No hubieron filas afectafas",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                        );
-                }
-                else
-                {
-                    MetroFramework.MetroMessageBox.Show(
-                        this, "Registro actualizado correctamente",
-                        "Actualizado",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation
-                        );
-                    this._listDiagnosis();
-                }
+                var ok = LocalStorage.MessageResponse.Show(response, this, "actualizado");
+                if (ok) this._listDiagnosis();
+
             } catch (FormatException)
             {
                 MetroFramework.MetroMessageBox.Show(
@@ -229,24 +170,31 @@ namespace Doctor.Views
             var model = LocalStorage.DBUtil.db.tb_diagnosis.Find(ID);
             model.deleted_at = DateTime.Now;
             var response = LocalStorage.DBUtil.db.SaveChanges();
-            if (response != 1)
+            var ok = LocalStorage.MessageResponse.Show(response, this, "eliminado");
+            if (ok) this._listDiagnosis();
+        }
+
+        private void dgv_diagnosis_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
             {
-                MetroFramework.MetroMessageBox.Show(
-                    this, "No hubieron filas afectafas",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                    );
+                if (dgv_diagnosis.Rows[e.RowIndex].Cells["Historial_Patológico"].Value == null)
+                    txt_hp.Text = "";
+                else
+                    txt_hp.Text = dgv_diagnosis.Rows[e.RowIndex].Cells["Historial_Patológico"].Value.ToString();
+
+                if (dgv_diagnosis.Rows[e.RowIndex].Cells["Enfermedad"].Value == null)
+                    txt_enfermedad.Text = "";
+                else
+                    txt_enfermedad.Text = dgv_diagnosis.Rows[e.RowIndex].Cells["Enfermedad"].Value.ToString();
+
+                lbl_id.Text = dgv_diagnosis.Rows[e.RowIndex].Cells["IDDiagnosis"].Value.ToString();
+                txt_motivo_consulta.Text = dgv_diagnosis.Rows[e.RowIndex].Cells["Motivo_de_consulta"].Value.ToString();
+                txt_num_hc.Text = dgv_diagnosis.Rows[e.RowIndex].Cells["NunHistoria_Clinica"].Value.ToString();
             }
-            else
+            catch (ArgumentOutOfRangeException)
             {
-                MetroFramework.MetroMessageBox.Show(
-                    this, "Registro eliminado correctamente",
-                    "Eliminado",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation
-                    );
-                this._listDiagnosis();
+                return;
             }
         }
     }

@@ -45,8 +45,5 @@ namespace Doctor.Models
         public virtual ICollection<tb_contrareferencia> tb_contrareferencia { get; set; }
         public virtual tb_district tb_district { get; set; }
         public virtual tb_gender tb_gender { get; set; }
-        public virtual tb_health_insurance tb_health_insurance { get; set; }
-        public virtual tb_marital_status tb_marital_status { get; set; }
-        public virtual tb_type_identification tb_type_identification { get; set; }
     }
 }

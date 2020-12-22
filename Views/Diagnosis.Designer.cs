@@ -29,6 +29,9 @@ namespace Doctor.Views
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this._tab_container = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this._btn_delete = new MetroFramework.Controls.MetroButton();
@@ -44,7 +47,7 @@ namespace Doctor.Views
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.dgv_diagnosis = new System.Windows.Forms.DataGridView();
+            this.dgv_diagnosis = new MetroFramework.Controls.MetroGrid();
             this._tab_container.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -57,7 +60,7 @@ namespace Doctor.Views
             this._tab_container.Controls.Add(this.metroTabPage2);
             this._tab_container.Location = new System.Drawing.Point(1, 3);
             this._tab_container.Name = "_tab_container";
-            this._tab_container.SelectedIndex = 0;
+            this._tab_container.SelectedIndex = 1;
             this._tab_container.Size = new System.Drawing.Size(479, 300);
             this._tab_container.TabIndex = 1;
             this._tab_container.UseSelectable = true;
@@ -299,15 +302,51 @@ namespace Doctor.Views
             // 
             // dgv_diagnosis
             // 
-            this.dgv_diagnosis.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_diagnosis.AllowUserToAddRows = false;
+            this.dgv_diagnosis.AllowUserToDeleteRows = false;
+            this.dgv_diagnosis.AllowUserToResizeRows = false;
+            this.dgv_diagnosis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgv_diagnosis.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_diagnosis.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_diagnosis.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_diagnosis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_diagnosis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_diagnosis.GridColor = System.Drawing.Color.White;
-            this.dgv_diagnosis.Location = new System.Drawing.Point(3, 5);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_diagnosis.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_diagnosis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_diagnosis.EnableHeadersVisualStyles = false;
+            this.dgv_diagnosis.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgv_diagnosis.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgv_diagnosis.Location = new System.Drawing.Point(0, 0);
             this.dgv_diagnosis.Name = "dgv_diagnosis";
-            this.dgv_diagnosis.Size = new System.Drawing.Size(465, 242);
-            this.dgv_diagnosis.TabIndex = 2;
-            this.dgv_diagnosis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_diagnosis_CellClick);
+            this.dgv_diagnosis.ReadOnly = true;
+            this.dgv_diagnosis.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_diagnosis.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_diagnosis.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_diagnosis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_diagnosis.Size = new System.Drawing.Size(471, 258);
+            this.dgv_diagnosis.TabIndex = 3;
+            this.dgv_diagnosis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_diagnosis_CellClick_1);
             // 
             // Diagnosis
             // 
@@ -331,7 +370,6 @@ namespace Doctor.Views
         private MetroFramework.Controls.MetroTabControl _tab_container;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
-        private System.Windows.Forms.DataGridView dgv_diagnosis;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
@@ -344,5 +382,6 @@ namespace Doctor.Views
         private MetroFramework.Controls.MetroButton _btn_add;
         private MetroFramework.Controls.MetroLabel lbl_id;
         private MetroFramework.Controls.MetroButton _btn_delete;
+        private MetroFramework.Controls.MetroGrid dgv_diagnosis;
     }
 }

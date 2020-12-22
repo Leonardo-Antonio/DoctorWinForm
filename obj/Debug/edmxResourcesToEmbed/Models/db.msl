@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="db_clinicModelStoreContainer" CdmEntityContainer="db_clinicEntities1">
+  <EntityContainerMapping StorageEntityContainer="db_clinicModelStoreContainer" CdmEntityContainer="db_clinicEntitie">
     <EntitySetMapping Name="tb_appointment">
       <EntityTypeMapping TypeName="db_clinicModel.tb_appointment">
         <MappingFragment StoreEntitySet="tb_appointment">
@@ -11,19 +11,6 @@
           <ScalarProperty Name="id_patient" ColumnName="id_patient" />
           <ScalarProperty Name="id_receptionist" ColumnName="id_receptionist" />
           <ScalarProperty Name="state" ColumnName="state" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_cashier">
-      <EntityTypeMapping TypeName="db_clinicModel.tb_cashier">
-        <MappingFragment StoreEntitySet="tb_cashier">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="a_p" ColumnName="a_p" />
-          <ScalarProperty Name="a_m" ColumnName="a_m" />
-          <ScalarProperty Name="dni" ColumnName="dni" />
-          <ScalarProperty Name="state" ColumnName="state" />
-          <ScalarProperty Name="password" ColumnName="password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -48,8 +35,8 @@
           <ScalarProperty Name="date_contref" ColumnName="date_contref" />
           <ScalarProperty Name="id_patient" ColumnName="id_patient" />
           <ScalarProperty Name="id_doctor" ColumnName="id_doctor" />
-          <ScalarProperty Name="id_receptionist" ColumnName="id_receptionist" />
-          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -98,32 +85,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_health_insurance">
-      <EntityTypeMapping TypeName="db_clinicModel.tb_health_insurance">
-        <MappingFragment StoreEntitySet="tb_health_insurance">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_hour">
-      <EntityTypeMapping TypeName="db_clinicModel.tb_hour">
-        <MappingFragment StoreEntitySet="tb_hour">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="entry" ColumnName="entry" />
-          <ScalarProperty Name="departure" ColumnName="departure" />
-          <ScalarProperty Name="id_turn" ColumnName="id_turn" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_marital_status">
-      <EntityTypeMapping TypeName="db_clinicModel.tb_marital_status">
-        <MappingFragment StoreEntitySet="tb_marital_status">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="marital_status" ColumnName="marital_status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_patient">
       <EntityTypeMapping TypeName="db_clinicModel.tb_patient">
         <MappingFragment StoreEntitySet="tb_patient">
@@ -146,49 +107,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_proof_of_purchase">
-      <EntityTypeMapping TypeName="db_clinicModel.tb_proof_of_purchase">
-        <MappingFragment StoreEntitySet="tb_proof_of_purchase">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="id_appointment" ColumnName="id_appointment" />
-          <ScalarProperty Name="id_cashier" ColumnName="id_cashier" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_receptionist">
-      <EntityTypeMapping TypeName="db_clinicModel.tb_receptionist">
-        <MappingFragment StoreEntitySet="tb_receptionist">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="a_p" ColumnName="a_p" />
-          <ScalarProperty Name="a_m" ColumnName="a_m" />
-          <ScalarProperty Name="dni" ColumnName="dni" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="state" ColumnName="state" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_speciality">
       <EntityTypeMapping TypeName="db_clinicModel.tb_speciality">
         <MappingFragment StoreEntitySet="tb_speciality">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="speciality" ColumnName="speciality" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_turn">
-      <EntityTypeMapping TypeName="db_clinicModel.tb_turn">
-        <MappingFragment StoreEntitySet="tb_turn">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="turn" ColumnName="turn" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_type_identification">
-      <EntityTypeMapping TypeName="db_clinicModel.tb_type_identification">
-        <MappingFragment StoreEntitySet="tb_type_identification">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="type" ColumnName="type" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -4,43 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e53f0e8882004fd2a3eff65b194b27cc" Name="Diagram1">
-        <EntityTypeShape EntityType="db_clinicModel.tb_appointment" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_cashier" Width="1.5" PointX="11.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_clinic_history" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_contrareferencia" Width="1.5" PointX="11.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_diagnosis" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_district" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_doctor" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_gender" Width="1.5" PointX="3.75" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_health_insurance" Width="1.5" PointX="3.75" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_hour" Width="1.5" PointX="1.5" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_marital_status" Width="1.5" PointX="3.75" PointY="14.75" IsExpanded="true" />
+      <Diagram DiagramId="6b295e59ef534698bacdfb1a8a147387" Name="Diagram1">
+        <EntityTypeShape EntityType="db_clinicModel.tb_appointment" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_clinicModel.tb_clinic_history" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_clinicModel.tb_contrareferencia" Width="1.5" PointX="11.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_clinicModel.tb_diagnosis" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_clinicModel.tb_district" Width="1.5" PointX="3.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_clinicModel.tb_doctor" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_clinicModel.tb_gender" Width="1.5" PointX="3.75" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="db_clinicModel.tb_patient" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_proof_of_purchase" Width="1.5" PointX="13.5" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_receptionist" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_speciality" Width="1.5" PointX="1.5" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_turn" Width="1.5" PointX="1.5" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_clinicModel.tb_type_identification" Width="1.5" PointX="3.75" PointY="17.125" IsExpanded="true" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_appoin__id_do__056ECC6A" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_appoin__id_pa__0662F0A3" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_appoin__id_re__075714DC" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_proof___id_ap__0EF836A4" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_proof___id_ca__0FEC5ADD" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_diagno__id_cl__7720AD13" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_patien__id_cl__725BF7F6" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_contra__id_do__00AA174D" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_contra__id_pa__7FB5F314" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_contra__id_re__019E3B86" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_diagno__id_do__7814D14C" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_patien__id_di__74444068" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_doctor__id_ho__59904A2C" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_doctor__id_sp__5A846E65" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_patien__id_ge__6F7F8B4B" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_patien__id_he__73501C2F" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_hour__id_turn__51EF2864" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_patien__id_ma__7167D3BD" ManuallyRouted="false" />
-        <AssociationConnector Association="db_clinicModel.FK__tb_patien__id_ty__7073AF84" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="db_clinicModel.tb_speciality" Width="1.5" PointX="1.5" PointY="10.125" IsExpanded="true" />
+        <AssociationConnector Association="db_clinicModel.FK__tb_appoin__id_do__184C96B4" ManuallyRouted="false" />
+        <AssociationConnector Association="db_clinicModel.FK__tb_appoin__id_pa__1940BAED" ManuallyRouted="false" />
+        <AssociationConnector Association="db_clinicModel.FK__tb_diagno__id_cl__0BE6BFCF" ManuallyRouted="false" />
+        <AssociationConnector Association="db_clinicModel.FK__tb_patien__id_cl__07220AB2" ManuallyRouted="false" />
+        <AssociationConnector Association="db_clinicModel.FK__tb_contra__id_do__147C05D0" ManuallyRouted="false" />
+        <AssociationConnector Association="db_clinicModel.FK__tb_contra__id_pa__1387E197" ManuallyRouted="false" />
+        <AssociationConnector Association="db_clinicModel.FK__tb_diagno__id_do__0CDAE408" ManuallyRouted="false" />
+        <AssociationConnector Association="db_clinicModel.FK__tb_patien__id_di__090A5324" ManuallyRouted="false" />
+        <AssociationConnector Association="db_clinicModel.FK__tb_doctor__id_sp__6F4A8121" ManuallyRouted="false" />
+        <AssociationConnector Association="db_clinicModel.FK__tb_patien__id_ge__04459E07" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

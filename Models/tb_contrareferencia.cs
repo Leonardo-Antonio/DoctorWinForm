@@ -25,11 +25,10 @@ namespace Doctor.Models
         public System.DateTime date_contref { get; set; }
         public string id_patient { get; set; }
         public int id_doctor { get; set; }
-        public int id_receptionist { get; set; }
-        public Nullable<bool> state { get; set; }
+        public Nullable<System.DateTime> deleted_at { get; set; }
+        public Nullable<System.DateTime> updated_at { get; set; }
     
         public virtual tb_doctor tb_doctor { get; set; }
         public virtual tb_patient tb_patient { get; set; }
-        public virtual tb_receptionist tb_receptionist { get; set; }
     }
 }
