@@ -30,10 +30,11 @@ namespace Doctor.Views
         private void InitializeComponent()
         {
             this._pnl_dock = new MetroFramework.Controls.MetroPanel();
-            this._pnl_main = new MetroFramework.Controls.MetroPanel();
             this._btn_contrarefencia = new MetroFramework.Controls.MetroButton();
             this._btn_diagnosis = new MetroFramework.Controls.MetroButton();
             this._btn_login = new MetroFramework.Controls.MetroButton();
+            this._pnl_main = new MetroFramework.Controls.MetroPanel();
+            this.lbl_doctor = new MetroFramework.Controls.MetroLabel();
             this._pnl_dock.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,19 +53,6 @@ namespace Doctor.Views
             this._pnl_dock.VerticalScrollbarBarColor = true;
             this._pnl_dock.VerticalScrollbarHighlightOnWheel = false;
             this._pnl_dock.VerticalScrollbarSize = 10;
-            // 
-            // _pnl_main
-            // 
-            this._pnl_main.HorizontalScrollbarBarColor = true;
-            this._pnl_main.HorizontalScrollbarHighlightOnWheel = false;
-            this._pnl_main.HorizontalScrollbarSize = 10;
-            this._pnl_main.Location = new System.Drawing.Point(98, 63);
-            this._pnl_main.Name = "_pnl_main";
-            this._pnl_main.Size = new System.Drawing.Size(479, 264);
-            this._pnl_main.TabIndex = 1;
-            this._pnl_main.VerticalScrollbarBarColor = true;
-            this._pnl_main.VerticalScrollbarHighlightOnWheel = false;
-            this._pnl_main.VerticalScrollbarSize = 10;
             // 
             // _btn_contrarefencia
             // 
@@ -108,11 +96,33 @@ namespace Doctor.Views
             this._btn_login.UseSelectable = true;
             this._btn_login.Click += new System.EventHandler(this._btn_login_Click);
             // 
+            // _pnl_main
+            // 
+            this._pnl_main.HorizontalScrollbarBarColor = true;
+            this._pnl_main.HorizontalScrollbarHighlightOnWheel = false;
+            this._pnl_main.HorizontalScrollbarSize = 10;
+            this._pnl_main.Location = new System.Drawing.Point(98, 29);
+            this._pnl_main.Name = "_pnl_main";
+            this._pnl_main.Size = new System.Drawing.Size(480, 300);
+            this._pnl_main.TabIndex = 1;
+            this._pnl_main.VerticalScrollbarBarColor = true;
+            this._pnl_main.VerticalScrollbarHighlightOnWheel = false;
+            this._pnl_main.VerticalScrollbarSize = 10;
+            // 
+            // lbl_doctor
+            // 
+            this.lbl_doctor.AutoSize = true;
+            this.lbl_doctor.Location = new System.Drawing.Point(23, 333);
+            this.lbl_doctor.Name = "lbl_doctor";
+            this.lbl_doctor.Size = new System.Drawing.Size(0, 0);
+            this.lbl_doctor.TabIndex = 2;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 350);
+            this.Controls.Add(this.lbl_doctor);
             this.Controls.Add(this._pnl_main);
             this.Controls.Add(this._pnl_dock);
             this.Name = "Main";
@@ -120,6 +130,7 @@ namespace Doctor.Views
             this.Load += new System.EventHandler(this.Main_Load);
             this._pnl_dock.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -130,5 +141,6 @@ namespace Doctor.Views
         private MetroFramework.Controls.MetroButton _btn_contrarefencia;
         private MetroFramework.Controls.MetroButton _btn_diagnosis;
         private MetroFramework.Controls.MetroPanel _pnl_main;
+        private MetroFramework.Controls.MetroLabel lbl_doctor;
     }
 }

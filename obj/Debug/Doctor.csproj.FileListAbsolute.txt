@@ -1,4 +1,3 @@
-D:\CSharp\Doctor\obj\Debug\Doctor.csprojAssemblyReference.cache
 D:\CSharp\Doctor\obj\Debug\Doctor.Properties.Resources.resources
 D:\CSharp\Doctor\obj\Debug\Doctor.Views.Main.resources
 D:\CSharp\Doctor\obj\Debug\Doctor.csproj.GenerateResource.cache
@@ -15,3 +14,7 @@ D:\CSharp\Doctor\obj\Debug\Doctor.pdb
 D:\CSharp\Doctor\obj\Debug\Doctor.Views.Contrareferencia.resources
 D:\CSharp\Doctor\obj\Debug\Doctor.Views.Diagnosis.resources
 D:\CSharp\Doctor\obj\Debug\Doctor.Views.Login.resources
+D:\CSharp\Doctor\bin\Debug\EntityFramework.dll
+D:\CSharp\Doctor\bin\Debug\EntityFramework.SqlServer.dll
+D:\CSharp\Doctor\bin\Debug\EntityFramework.xml
+D:\CSharp\Doctor\bin\Debug\EntityFramework.SqlServer.xml
