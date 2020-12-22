@@ -31,6 +31,8 @@ namespace Doctor.Views
         {
             this._tab_container = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this._btn_delete = new MetroFramework.Controls.MetroButton();
+            this.lbl_id = new MetroFramework.Controls.MetroLabel();
             this._btn_update = new MetroFramework.Controls.MetroButton();
             this._btn_add = new MetroFramework.Controls.MetroButton();
             this.txt_num_hc = new MetroFramework.Controls.MetroTextBox();
@@ -43,8 +45,6 @@ namespace Doctor.Views
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.dgv_diagnosis = new System.Windows.Forms.DataGridView();
-            this.lbl_id = new MetroFramework.Controls.MetroLabel();
-            this._btn_delete = new MetroFramework.Controls.MetroButton();
             this._tab_container.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -88,9 +88,27 @@ namespace Doctor.Views
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
+            // _btn_delete
+            // 
+            this._btn_delete.Location = new System.Drawing.Point(312, 202);
+            this._btn_delete.Name = "_btn_delete";
+            this._btn_delete.Size = new System.Drawing.Size(143, 38);
+            this._btn_delete.TabIndex = 15;
+            this._btn_delete.Text = "Eliminar";
+            this._btn_delete.UseSelectable = true;
+            this._btn_delete.Click += new System.EventHandler(this._btn_delete_Click);
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Location = new System.Drawing.Point(372, 31);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(0, 0);
+            this.lbl_id.TabIndex = 14;
+            // 
             // _btn_update
             // 
-            this._btn_update.Location = new System.Drawing.Point(162, 203);
+            this._btn_update.Location = new System.Drawing.Point(163, 202);
             this._btn_update.Name = "_btn_update";
             this._btn_update.Size = new System.Drawing.Size(143, 38);
             this._btn_update.TabIndex = 13;
@@ -100,7 +118,7 @@ namespace Doctor.Views
             // 
             // _btn_add
             // 
-            this._btn_add.Location = new System.Drawing.Point(13, 203);
+            this._btn_add.Location = new System.Drawing.Point(14, 202);
             this._btn_add.Name = "_btn_add";
             this._btn_add.Size = new System.Drawing.Size(143, 38);
             this._btn_add.TabIndex = 12;
@@ -290,24 +308,6 @@ namespace Doctor.Views
             this.dgv_diagnosis.Size = new System.Drawing.Size(465, 242);
             this.dgv_diagnosis.TabIndex = 2;
             this.dgv_diagnosis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_diagnosis_CellClick);
-            // 
-            // lbl_id
-            // 
-            this.lbl_id.AutoSize = true;
-            this.lbl_id.Location = new System.Drawing.Point(372, 31);
-            this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(0, 0);
-            this.lbl_id.TabIndex = 14;
-            // 
-            // _btn_delete
-            // 
-            this._btn_delete.Location = new System.Drawing.Point(311, 203);
-            this._btn_delete.Name = "_btn_delete";
-            this._btn_delete.Size = new System.Drawing.Size(143, 38);
-            this._btn_delete.TabIndex = 15;
-            this._btn_delete.Text = "Eliminar";
-            this._btn_delete.UseSelectable = true;
-            this._btn_delete.Click += new System.EventHandler(this._btn_delete_Click);
             // 
             // Diagnosis
             // 

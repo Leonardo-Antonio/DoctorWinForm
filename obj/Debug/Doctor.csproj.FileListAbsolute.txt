@@ -18,3 +18,4 @@ D:\CSharp\Doctor\bin\Debug\EntityFramework.dll
 D:\CSharp\Doctor\bin\Debug\EntityFramework.SqlServer.dll
 D:\CSharp\Doctor\bin\Debug\EntityFramework.xml
 D:\CSharp\Doctor\bin\Debug\EntityFramework.SqlServer.xml
+D:\CSharp\Doctor\obj\Debug\Doctor.csprojAssemblyReference.cache
