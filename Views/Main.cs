@@ -60,6 +60,10 @@ namespace Doctor.Views
 
                 if (this.doctor.id != 0)
                 {
+                    _btn_contrarefencia.Show();
+                    _btn_diagnosis.Show();
+                    _btn_out.Show();
+
                     LocalStorage.Doctor.ID = this.doctor.id;
                     lbl_doctor.Text = $"{this.doctor.name} {this.doctor.a_p} {this.doctor.a_m}";
                     _btn_login.Enabled = false;
@@ -79,7 +83,7 @@ namespace Doctor.Views
             } catch (InvalidOperationException)
             {
                 MetroFramework.MetroMessageBox.Show(
-                    this, "No se aceptan campas vacios",
+                    this, "El usuario no existe",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -96,6 +100,29 @@ namespace Doctor.Views
 
         private void Main_Load(object sender, EventArgs e)
         {
+            this._signIn(false);
+        }
+
+        private void _btn_out_Click(object sender, EventArgs e)
+        {
+            this._signIn(true);
+        }
+
+        private void _signIn(bool signin)
+        {
+            if (signin) _btn_login.Enabled = true;
+
+            _login.ClearData();
+
+            LocalStorage.Doctor.DNI = "";
+            LocalStorage.Doctor.ID = 0;
+            LocalStorage.Doctor.Password = "";
+            lbl_doctor.Text = "";
+
+            _btn_contrarefencia.Hide();
+            _btn_diagnosis.Hide();
+            _btn_out.Hide();
+
             if (_pnl_main.Contains(_login) == false)
             {
                 _pnl_main.Controls.Add(_login);

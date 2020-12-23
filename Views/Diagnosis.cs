@@ -25,6 +25,23 @@ namespace Doctor.Views
 
         private void _btn_add_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var ID = int.Parse(txt_num_hc.Text);
+                var numhc = (from hc in LocalStorage.DBUtil.db.tb_clinic_history
+                             where hc.id == ID
+                             select new { NumHC = hc.id }).First();
+            }
+            catch (InvalidOperationException)
+            {
+                MetroFramework.MetroMessageBox.Show(
+                    this, "El num de historia clinica no existe",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
             if (txt_motivo_consulta.Text == "" || string.IsNullOrEmpty(txt_motivo_consulta.Text))
             {
                 MetroFramework.MetroMessageBox.Show(
@@ -57,7 +74,7 @@ namespace Doctor.Views
                     MessageBoxIcon.Error
                     );
             }
-            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            catch (Exception)
             {
                 MetroFramework.MetroMessageBox.Show(
                     this, "El num de historia clinica no existe",
@@ -94,6 +111,24 @@ namespace Doctor.Views
 
         private void _btn_update_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var ID = int.Parse(txt_num_hc.Text);
+                var numhc = (from hc in LocalStorage.DBUtil.db.tb_clinic_history
+                             where hc.id == ID
+                             select new { NumHC = hc.id }).First();
+            }
+            catch (InvalidOperationException)
+            {
+                MetroFramework.MetroMessageBox.Show(
+                    this, "El num de historia clinica no existe",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
+
             if (string.IsNullOrEmpty(txt_motivo_consulta.Text))
             {
                 MetroFramework.MetroMessageBox.Show(
@@ -104,7 +139,7 @@ namespace Doctor.Views
                     );
                 return;
             }
-            if (int.Parse(lbl_id.Text) == 0)
+            if (string.IsNullOrEmpty(lbl_id.Text))
             {
                 MetroFramework.MetroMessageBox.Show(
                     this, "Seleccion un diagnostico que esta en la pestaña search", 
@@ -156,7 +191,7 @@ namespace Doctor.Views
 
         private void _btn_delete_Click(object sender, EventArgs e)
         {
-            if (int.Parse(lbl_id.Text) == 0)
+            if (string.IsNullOrEmpty(lbl_id.Text))
             {
                 MetroFramework.MetroMessageBox.Show(
                     this, "Seleccion un diagnostico que esta en la pestaña search",

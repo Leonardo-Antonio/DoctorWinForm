@@ -71,13 +71,26 @@ namespace Doctor.Views
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            this.password.RemoveAt(this.password.Count()-1);
-            this.pass = "";
-            foreach (var value in this.password)
-                pass += value;
-            txt_pass.Clear();
-            txt_pass.Text = this.pass;
-            LocalStorage.Doctor.Password = this.pass;
+            try
+            {
+                this.password.RemoveAt(this.password.Count() - 1);
+                this.pass = "";
+                foreach (var value in this.password)
+                    pass += value;
+                txt_pass.Clear();
+                txt_pass.Text = this.pass;
+                LocalStorage.Doctor.Password = this.pass;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MetroFramework.MetroMessageBox.Show(
+                    this, 
+                    "Ya no hay mas carateres para eliminar", 
+                    "INFORMACIÓN",
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information
+                    );
+            }
         }
 
         private void _addPass(string num)
@@ -96,6 +109,7 @@ namespace Doctor.Views
             txt_pass.Text = pass;
             LocalStorage.Doctor.DNI = txt_dni.Text;
             LocalStorage.Doctor.Password = txt_pass.Text;
+            txt_pass.Enabled = false;
         }
 
         private void _btn_trash_Click(object sender, EventArgs e)
@@ -155,6 +169,12 @@ namespace Doctor.Views
             _btn_9.Enabled = false;
             _btn_trash.Enabled = false;
             btn_delete.Enabled = false;
+        }
+
+        public void ClearData()
+        {
+            txt_dni.Clear();
+            txt_pass.Clear();
         }
     }
 }

@@ -30,6 +30,7 @@ namespace Doctor.Views
         private void InitializeComponent()
         {
             this._pnl_dock = new MetroFramework.Controls.MetroPanel();
+            this._btn_out = new MetroFramework.Controls.MetroButton();
             this._btn_contrarefencia = new MetroFramework.Controls.MetroButton();
             this._btn_diagnosis = new MetroFramework.Controls.MetroButton();
             this._btn_login = new MetroFramework.Controls.MetroButton();
@@ -40,22 +41,39 @@ namespace Doctor.Views
             // 
             // _pnl_dock
             // 
+            this._pnl_dock.Controls.Add(this._btn_out);
             this._pnl_dock.Controls.Add(this._btn_contrarefencia);
             this._pnl_dock.Controls.Add(this._btn_diagnosis);
             this._pnl_dock.Controls.Add(this._btn_login);
+            this._pnl_dock.ForeColor = System.Drawing.Color.White;
             this._pnl_dock.HorizontalScrollbarBarColor = true;
             this._pnl_dock.HorizontalScrollbarHighlightOnWheel = false;
             this._pnl_dock.HorizontalScrollbarSize = 10;
             this._pnl_dock.Location = new System.Drawing.Point(23, 63);
             this._pnl_dock.Name = "_pnl_dock";
-            this._pnl_dock.Size = new System.Drawing.Size(69, 186);
+            this._pnl_dock.Size = new System.Drawing.Size(69, 264);
             this._pnl_dock.TabIndex = 0;
             this._pnl_dock.VerticalScrollbarBarColor = true;
             this._pnl_dock.VerticalScrollbarHighlightOnWheel = false;
             this._pnl_dock.VerticalScrollbarSize = 10;
             // 
+            // _btn_out
+            // 
+            this._btn_out.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._btn_out.BackgroundImage = global::Doctor.Properties.Resources.exit;
+            this._btn_out.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this._btn_out.Location = new System.Drawing.Point(0, 207);
+            this._btn_out.Name = "_btn_out";
+            this._btn_out.Size = new System.Drawing.Size(69, 57);
+            this._btn_out.TabIndex = 4;
+            this._btn_out.Text = "Cerrar sección";
+            this._btn_out.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._btn_out.UseSelectable = true;
+            this._btn_out.Click += new System.EventHandler(this._btn_out_Click);
+            // 
             // _btn_contrarefencia
             // 
+            this._btn_contrarefencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._btn_contrarefencia.BackgroundImage = global::Doctor.Properties.Resources.cr;
             this._btn_contrarefencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this._btn_contrarefencia.Location = new System.Drawing.Point(0, 126);
@@ -69,6 +87,7 @@ namespace Doctor.Views
             // 
             // _btn_diagnosis
             // 
+            this._btn_diagnosis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._btn_diagnosis.BackgroundImage = global::Doctor.Properties.Resources.diagnosis;
             this._btn_diagnosis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this._btn_diagnosis.Location = new System.Drawing.Point(0, 63);
@@ -82,11 +101,10 @@ namespace Doctor.Views
             // 
             // _btn_login
             // 
-            this._btn_login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this._btn_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._btn_login.BackgroundImage = global::Doctor.Properties.Resources.medical_doctor;
             this._btn_login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this._btn_login.ForeColor = System.Drawing.SystemColors.ControlText;
             this._btn_login.Location = new System.Drawing.Point(0, 0);
             this._btn_login.Name = "_btn_login";
             this._btn_login.Size = new System.Drawing.Size(69, 57);
@@ -142,5 +160,6 @@ namespace Doctor.Views
         private MetroFramework.Controls.MetroButton _btn_diagnosis;
         private MetroFramework.Controls.MetroPanel _pnl_main;
         private MetroFramework.Controls.MetroLabel lbl_doctor;
+        private MetroFramework.Controls.MetroButton _btn_out;
     }
 }

@@ -60,7 +60,7 @@ namespace Doctor.Views
             this._tab_container.Controls.Add(this.metroTabPage2);
             this._tab_container.Location = new System.Drawing.Point(1, 3);
             this._tab_container.Name = "_tab_container";
-            this._tab_container.SelectedIndex = 1;
+            this._tab_container.SelectedIndex = 0;
             this._tab_container.Size = new System.Drawing.Size(479, 300);
             this._tab_container.TabIndex = 1;
             this._tab_container.UseSelectable = true;
