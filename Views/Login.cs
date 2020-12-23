@@ -174,7 +174,25 @@ namespace Doctor.Views
         public void ClearData()
         {
             txt_dni.Clear();
+            this.pass = "";
+            this.password.Clear();
             txt_pass.Clear();
+            txt_dni.Enabled = true;
+            LocalStorage.Doctor.Password = "";
+            LocalStorage.Doctor.DNI = "";
+
+            _btn_0.Enabled = false;
+            _btn_1.Enabled = false;
+            _btn_2.Enabled = false;
+            _btn_3.Enabled = false;
+            _btn_4.Enabled = false;
+            _btn_5.Enabled = false;
+            _btn_6.Enabled = false;
+            _btn_7.Enabled = false;
+            _btn_8.Enabled = false;
+            _btn_9.Enabled = false;
+            _btn_trash.Enabled = false;
+            btn_delete.Enabled = false;
         }
     }
 }

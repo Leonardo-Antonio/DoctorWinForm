@@ -42,6 +42,16 @@ namespace Doctor.Views
                     );
                 return;
             }
+            catch (FormatException)
+            {
+                MetroFramework.MetroMessageBox.Show(
+                    this, "Ingrese un dato valido",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
             if (txt_motivo_consulta.Text == "" || string.IsNullOrEmpty(txt_motivo_consulta.Text))
             {
                 MetroFramework.MetroMessageBox.Show(
@@ -127,6 +137,14 @@ namespace Doctor.Views
                     MessageBoxIcon.Error
                     );
                 return;
+            } catch(FormatException)
+            {
+                MetroFramework.MetroMessageBox.Show(
+                    this, "Ingrese un numero de historia valido",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
             }
 
             if (string.IsNullOrEmpty(txt_motivo_consulta.Text))
